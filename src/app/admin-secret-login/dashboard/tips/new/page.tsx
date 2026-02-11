@@ -1,9 +1,9 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, Save } from 'lucide-react';
-import Image from 'next/image';
+import CloudinaryUpload from '@/components/CloudinaryUpload';
 
 export default function NewTipPage() {
     const router = useRouter();
@@ -12,13 +12,7 @@ export default function NewTipPage() {
     const [category, setCategory] = useState('');
     const [order, setOrder] = useState(0);
     const [image, setImage] = useState('');
-    const [images, setImages] = useState<string[]>([]);
-    const [showImagePicker, setShowImagePicker] = useState(false);
     const [loading, setLoading] = useState(false);
-
-    useEffect(() => {
-        fetch('/api/images').then(r => r.json()).then(setImages);
-    }, []);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -90,49 +84,11 @@ export default function NewTipPage() {
                     />
                 </div>
 
-                <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">Imagen (opcional)</label>
-                    <div className="border border-gray-200 rounded-lg p-4">
-                        {image ? (
-                            <div className="flex items-center gap-4">
-                                <div className="relative h-20 w-32 rounded overflow-hidden bg-gray-100">
-                                    <Image src={image} alt="Preview" fill className="object-cover" />
-                                </div>
-                                <button type="button" onClick={() => setImage('')} className="text-red-500 text-sm font-medium">
-                                    Quitar imagen
-                                </button>
-                            </div>
-                        ) : (
-                            <button type="button" onClick={() => setShowImagePicker(true)} className="text-primary font-medium text-sm">
-                                + Seleccionar imagen
-                            </button>
-                        )}
-                    </div>
-                </div>
-
-                {showImagePicker && (
-                    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-                        <div className="bg-white rounded-lg max-w-2xl w-full max-h-[80vh] overflow-hidden">
-                            <div className="p-4 border-b flex justify-between items-center">
-                                <h3 className="font-bold text-charcoal">Seleccionar Imagen</h3>
-                                <button onClick={() => setShowImagePicker(false)} className="text-gray-400 hover:text-charcoal">
-                                    <ArrowLeft size={20} />
-                                </button>
-                            </div>
-                            <div className="p-4 overflow-y-auto max-h-[60vh] grid grid-cols-3 sm:grid-cols-4 gap-3">
-                                {images.map(img => (
-                                    <div
-                                        key={img}
-                                        onClick={() => { setImage(img); setShowImagePicker(false); }}
-                                        className="relative aspect-square rounded-lg overflow-hidden cursor-pointer hover:ring-2 ring-primary transition-all bg-gray-100"
-                                    >
-                                        <Image src={img} alt="" fill className="object-cover" />
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                )}
+                <CloudinaryUpload
+                    onImageUrl={setImage}
+                    currentImage={image}
+                    label="Imagen (opcional)"
+                />
 
                 <div className="flex justify-end pt-4 border-t">
                     <button

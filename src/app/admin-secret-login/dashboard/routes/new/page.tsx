@@ -1,8 +1,9 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { ArrowLeft, Plus, Trash } from 'lucide-react';
+import { ArrowLeft, Plus, Trash, Upload } from 'lucide-react';
 import Link from 'next/link';
+import CloudinaryUpload from '@/components/CloudinaryUpload';
 
 interface Book {
     title: string;
@@ -16,20 +17,8 @@ export default function NewRoutePage() {
     const [description, setDescription] = useState('');
     const [tips, setTips] = useState('');
     const [books, setBooks] = useState<Book[]>([]);
-
-    // Available images for picker
-    const [images, setImages] = useState<string[]>([]);
     const [loading, setLoading] = useState(false);
-
-    // Local state for active book being edited? No, simpler to just have list of inputs.
-    // For Image Picker, we need to know which book index we are picking for.
-    const [pickingImageFor, setPickingImageFor] = useState<number | null>(null);
-
     const router = useRouter();
-
-    useEffect(() => {
-        fetch('/api/images').then(res => res.json()).then(data => setImages(data));
-    }, []);
 
     const addBook = () => {
         setBooks([...books, { title: '', author: '', description: '', image: '' }]);
@@ -152,22 +141,11 @@ export default function NewRoutePage() {
                                 </div>
 
                                 <div>
-                                    <label className="block text-xs font-bold text-gray-500 mb-2 pointer-events-none">Portada</label>
-                                    <div className={`border-2 border-dashed rounded-lg p-4 h-full flex flex-col items-center justify-center cursor-pointer hover:bg-gray-50 transition-colors ${book.image ? 'border-primary bg-primary/5' : 'border-gray-300'}`}
-                                        onClick={() => setPickingImageFor(index)}
-                                    >
-                                        {book.image ? (
-                                            <div className="relative w-full h-32">
-                                                <img src={book.image} className="w-full h-full object-contain" />
-                                                <p className="text-center text-xs mt-2 text-primary font-bold truncate px-2">{book.image.split('/').pop()}</p>
-                                            </div>
-                                        ) : (
-                                            <div className="text-center text-gray-400">
-                                                <span className="material-symbols-outlined text-4xl block mb-2">add_photo_alternate</span>
-                                                <span className="text-xs font-bold uppercase">Seleccionar Imagen</span>
-                                            </div>
-                                        )}
-                                    </div>
+                                    <CloudinaryUpload
+                                        onImageUrl={(url) => updateBook(index, 'image', url)}
+                                        currentImage={book.image}
+                                        label="Portada"
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -175,7 +153,7 @@ export default function NewRoutePage() {
 
                     {books.length === 0 && (
                         <div className="p-8 border-2 border-dashed border-gray-200 rounded-lg text-center text-gray-400">
-                            No has agregado libros a esta ruta. Haz clic en "Agregar Libro".
+                            No has agregado libros a esta ruta. Haz clic en &quot;Agregar Libro&quot;.
                         </div>
                     )}
                 </div>
@@ -190,32 +168,6 @@ export default function NewRoutePage() {
                     </button>
                 </div>
             </form>
-
-            {/* Image Picker Modal Overlay */}
-            {pickingImageFor !== null && (
-                <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-                    <div className="bg-white rounded-lg shadow-xl w-full max-w-2xl max-h-[80vh] flex flex-col">
-                        <div className="p-4 border-b flex justify-between items-center">
-                            <h3 className="font-bold text-charcoal">Seleccionar Portada para Libro {pickingImageFor + 1}</h3>
-                            <button onClick={() => setPickingImageFor(null)}><ArrowLeft size={20} /></button>
-                        </div>
-                        <div className="p-4 overflow-y-auto grid grid-cols-3 sm:grid-cols-4 gap-3">
-                            {images.map(img => (
-                                <div
-                                    key={img}
-                                    onClick={() => {
-                                        updateBook(pickingImageFor!, 'image', img);
-                                        setPickingImageFor(null);
-                                    }}
-                                    className="cursor-pointer border hover:border-primary rounded overflow-hidden aspect-square"
-                                >
-                                    <img src={img} className="w-full h-full object-cover" />
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            )}
         </div>
     );
 }
