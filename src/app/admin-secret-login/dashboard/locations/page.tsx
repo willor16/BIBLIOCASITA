@@ -4,6 +4,8 @@ import { Plus, Trash, ArrowLeft, MapPin } from 'lucide-react'; // Added MapPin f
 import { revalidatePath } from 'next/cache';
 import Image from 'next/image';
 
+export const dynamic = 'force-dynamic';
+
 async function deleteLocation(formData: FormData) {
     'use server';
     const id = formData.get('id') as string;

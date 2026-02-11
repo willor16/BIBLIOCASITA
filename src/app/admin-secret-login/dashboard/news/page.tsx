@@ -4,6 +4,8 @@ import { Plus, Trash, ArrowLeft, Pencil } from 'lucide-react';
 import { revalidatePath } from 'next/cache';
 import Image from 'next/image';
 
+export const dynamic = 'force-dynamic';
+
 async function deleteNews(formData: FormData) {
     'use server';
     const id = formData.get('id') as string;

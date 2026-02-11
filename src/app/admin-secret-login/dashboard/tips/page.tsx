@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { Plus, Trash, ArrowLeft, Pencil, Lightbulb } from 'lucide-react';
 import { revalidatePath } from 'next/cache';
 
+export const dynamic = 'force-dynamic';
+
 async function deleteTip(formData: FormData) {
     'use server';
     const id = formData.get('id') as string;

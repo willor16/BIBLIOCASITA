@@ -4,6 +4,8 @@ import prisma from '@/lib/prisma';
 import Link from 'next/link';
 import { Newspaper, MapPin, BookOpen, Lightbulb, Plus, ArrowRight } from 'lucide-react';
 
+export const dynamic = 'force-dynamic';
+
 export default async function DashboardPage() {
     const cookieStore = await cookies();
     const session = cookieStore.get('admin_session');
