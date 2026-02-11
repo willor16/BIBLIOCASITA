@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Literary Elegance - Home</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Work+Sans:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#bd0f49",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221016",
+                        "charcoal": "#1b0d12",
+                        "cream": "#fcf8f9",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .serif-heading {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .body-sans {
+            font-family: 'Work Sans', sans-serif;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-charcoal dark:text-cream selection:bg-primary/30">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <!-- Header/Navigation -->
+            <header
+                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-charcoal/10 dark:border-cream/10 px-6 md:px-20 py-6 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
+                <div class="flex items-center gap-3">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined text-3xl">auto_stories</span>
+                    </div>
+                    <h2 class="text-charcoal dark:text-cream text-xl font-bold tracking-tight uppercase body-sans">
+                        Literary Elegance</h2>
+                </div>
+                <nav class="hidden md:flex flex-1 justify-center gap-10">
+                    <a class="text-charcoal dark:text-cream text-xs font-semibold tracking-widest uppercase hover:text-primary transition-colors"
+                        href="#">Our Mission</a>
+                    <a class="text-charcoal dark:text-cream text-xs font-semibold tracking-widest uppercase hover:text-primary transition-colors"
+                        href="#">The Charter</a>
+                    <a class="text-charcoal dark:text-cream text-xs font-semibold tracking-widest uppercase hover:text-primary transition-colors"
+                        href="#">Archives</a>
+                    <a class="text-charcoal dark:text-cream text-xs font-semibold tracking-widest uppercase hover:text-primary transition-colors"
+                        href="#">Board</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <button
+                        class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-none border border-primary h-10 px-6 bg-primary text-cream text-xs font-bold uppercase tracking-[0.1em] hover:bg-transparent hover:text-primary transition-all">
+                        <span>Join Us</span>
+                    </button>
+                    <button class="p-2 text-charcoal dark:text-cream">
+                        <span class="material-symbols-outlined">search</span>
+                    </button>
+                </div>
+            </header>
+            <!-- Hero Section -->
+            <main class="flex-1">
+                <section class="relative w-full h-[85vh] @container">
+                    <div class="absolute inset-0 bg-cover bg-center"
+                        data-alt="A person reading a book in a sunlit classical library"
+                        style='background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCN-ZsBYTxdig3tUzwvYeCUj7EqX5gXzr1nR_S_6o5-mGLV_SLmaavHDaZyMrJbrxBjVB-Uf9qwwSDkma4Z9ZP0JPzFqxVRc7HQUxQ1dGX2oXPw-2KpAG_lqLssfWMkOiOIHJn8VRsJ01ltCi-_w0Vx4x2V_JmNfcgyV4JhCPmPv-RsRsZa8g5YH9KIfFn4I8dSetf8vl67kdJh8UB87EkjLVIOcXvgNQA5AobH5jAR3wi7pgC4ZeZScDgyuuV4d4th7RqyQMQpVA");'>
+                    </div>
+                    <div class="relative h-full flex flex-col items-center justify-center text-center px-4">
+                        <span
+                            class="text-cream text-sm uppercase tracking-[0.4em] mb-6 opacity-90 body-sans font-medium">Est.
+                            1924 — A Sanctuary for Thought</span>
+                        <h1 class="text-cream text-6xl md:text-8xl serif-heading italic leading-tight max-w-4xl">
+                            The Art of Getting Lost
+                        </h1>
+                        <p
+                            class="text-cream/90 text-lg md:text-xl font-light mt-8 max-w-2xl leading-relaxed italic body-sans">
+                            Experience the immersive power of reading in our sanctuary of silence and sunlight.
+                        </p>
+                        <div class="mt-12 flex gap-6">
+                            <button
+                                class="px-10 py-4 bg-cream text-charcoal font-bold uppercase tracking-widest text-xs hover:bg-primary hover:text-white transition-all">Explore
+                                the Collection</button>
+                        </div>
+                        <div class="absolute bottom-10 animate-bounce">
+                            <span class="material-symbols-outlined text-cream text-3xl font-light">expand_more</span>
+                        </div>
+                    </div>
+                </section>
+                <!-- Editorial Mission Section -->
+                <section class="max-w-7xl mx-auto px-6 md:px-20 py-24">
+                    <div class="grid md:grid-cols-12 gap-16 items-start">
+                        <div class="md:col-span-5">
+                            <h2 class="text-primary text-xs font-bold uppercase tracking-[0.3em] mb-4">Our Commitment
+                            </h2>
+                            <h3
+                                class="serif-heading text-4xl md:text-5xl leading-tight text-charcoal dark:text-cream mb-8">
+                                Preserving the Essence of the Written Word</h3>
+                            <div class="w-20 h-px bg-primary mb-8"></div>
+                            <p class="text-charcoal/70 dark:text-cream/70 text-lg leading-loose mb-6">
+                                <span
+                                    class="text-6xl float-left mr-3 mt-2 text-primary serif-heading leading-none">W</span>e
+                                believe that in an age of digital noise, the physical book remains the ultimate
+                                technology for deep thought. Our mission is to nurture the modern intellectual through
+                                the timeless beauty of physical volumes and undistracted focus.
+                            </p>
+                        </div>
+                        <div class="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                            <div class="group border-l border-charcoal/10 dark:border-cream/10 pl-8 pt-4">
+                                <span class="material-symbols-outlined text-primary mb-4 text-3xl">auto_stories</span>
+                                <h4 class="serif-heading text-xl mb-3 text-charcoal dark:text-cream italic">The
+                                    Immersive Experience</h4>
+                                <p class="text-sm text-charcoal/60 dark:text-cream/60 leading-relaxed">Finding depth in
+                                    a world of digital distractions through curated reading environments.</p>
+                            </div>
+                            <div class="group border-l border-charcoal/10 dark:border-cream/10 pl-8 pt-4">
+                                <span class="material-symbols-outlined text-primary mb-4 text-3xl">psychology</span>
+                                <h4 class="serif-heading text-xl mb-3 text-charcoal dark:text-cream italic">Intellectual
+                                    Growth</h4>
+                                <p class="text-sm text-charcoal/60 dark:text-cream/60 leading-relaxed">Nurturing the
+                                    mind through both classic wisdom and contemporary literature.</p>
+                            </div>
+                            <div class="group border-l border-charcoal/10 dark:border-cream/10 pl-8 pt-4">
+                                <span
+                                    class="material-symbols-outlined text-primary mb-4 text-3xl">workspace_premium</span>
+                                <h4 class="serif-heading text-xl mb-3 text-charcoal dark:text-cream italic">Curated
+                                    Excellence</h4>
+                                <p class="text-sm text-charcoal/60 dark:text-cream/60 leading-relaxed">A hand-picked
+                                    selection of the world's most influential and beautifully bound texts.</p>
+                            </div>
+                            <div class="group border-l border-charcoal/10 dark:border-cream/10 pl-8 pt-4">
+                                <span class="material-symbols-outlined text-primary mb-4 text-3xl">history_edu</span>
+                                <h4 class="serif-heading text-xl mb-3 text-charcoal dark:text-cream italic">The Living
+                                    Archive</h4>
+                                <p class="text-sm text-charcoal/60 dark:text-cream/60 leading-relaxed">Maintaining a
+                                    legacy of physical manuscripts and rare editions for the next generation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Video Player Section -->
+                <section class="bg-charcoal dark:bg-black py-24 px-6">
+                    <div class="max-w-5xl mx-auto text-center">
+                        <h2 class="serif-heading text-white text-3xl md:text-4xl mb-12">The Quiet Revolution</h2>
+                        <div class="relative group aspect-video overflow-hidden rounded-lg bg-black shadow-2xl">
+                            <div class="absolute inset-0 opacity-60 group-hover:opacity-40 transition-opacity bg-cover bg-center"
+                                data-alt="Dark aesthetic library with golden lighting"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBOUH5HzYZddmsrN7pQ5WHEWTZW1l0XjmcV5MkxQIum1An0np8DzpLqAGdE1cZqYvJHhrMWn5j9pa-KnaXWU7H2yqjJS076ayFB_-o-S3l_nNq1RIBAVY-BG1ORGR1BcIadVC96PE67X-rQkVS0YTD-I5yD2lyCKmk4Sm2hubwHU9109ynOdQntIxzK86fvlDASZ-M7I8juTmawDPLPKryFi4JALDthWEWYxGxRGD-zxRIw1mPTNtRnPAdZY2JzabH5WbkgM3YbQw");'>
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <button
+                                    class="size-24 rounded-full border border-white/30 bg-white/10 flex items-center justify-center text-white backdrop-blur-sm group-hover:scale-110 group-hover:bg-primary/80 transition-all">
+                                    <span class="material-symbols-outlined text-5xl fill-current">play_arrow</span>
+                                </button>
+                            </div>
+                            <!-- Video Controls Overlay -->
+                            <div class="absolute inset-x-0 bottom-0 px-8 py-6 flex flex-col gap-2">
+                                <div class="w-full h-1 bg-white/20 rounded-full overflow-hidden">
+                                    <div class="h-full bg-primary w-1/3"></div>
+                                </div>
+                                <div class="flex justify-between text-[10px] text-white/60 tracking-widest uppercase">
+                                    <span>02:14</span>
+                                    <span>Short Film — Duration 06:45</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- The Library Charter Section -->
+                <section class="py-24 px-6 md:px-20 bg-background-light dark:bg-background-dark">
+                    <div
+                        class="max-w-4xl mx-auto border border-charcoal/10 dark:border-cream/10 p-12 md:p-20 bg-cream dark:bg-background-dark shadow-sm relative overflow-hidden">
+                        <!-- Background Texture Ornament -->
+                        <div
+                            class="absolute -top-10 -right-10 text-charcoal/5 dark:text-cream/5 select-none pointer-events-none">
+                            <span class="material-symbols-outlined text-[200px]">auto_stories</span>
+                        </div>
+                        <div class="text-center mb-16">
+                            <span class="material-symbols-outlined text-primary text-5xl mb-6">shield</span>
+                            <h2 class="serif-heading text-4xl text-charcoal dark:text-cream mb-4">The Reader’s Charter
+                            </h2>
+                            <p class="text-xs uppercase tracking-[0.2em] font-bold text-primary">Rules of the Sanctuary
+                            </p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-12 text-sm leading-loose">
+                            <div class="space-y-8">
+                                <div class="flex gap-4">
+                                    <span class="text-primary font-bold serif-heading text-xl">I.</span>
+                                    <p class="text-charcoal/80 dark:text-cream/80"><strong
+                                            class="text-charcoal dark:text-cream uppercase tracking-wide">Silence is a
+                                            Sanctuary.</strong> Speak only in whispers, or let the voices on the pages
+                                        be the only ones heard.</p>
+                                </div>
+                                <div class="flex gap-4">
+                                    <span class="text-primary font-bold serif-heading text-xl">II.</span>
+                                    <p class="text-charcoal/80 dark:text-cream/80"><strong
+                                            class="text-charcoal dark:text-cream uppercase tracking-wide">Respect the
+                                            Spine.</strong> Every volume is a vessel of history; handle each with the
+                                        reverence it deserves.</p>
+                                </div>
+                                <div class="flex gap-4">
+                                    <span class="text-primary font-bold serif-heading text-xl">III.</span>
+                                    <p class="text-charcoal/80 dark:text-cream/80"><strong
+                                            class="text-charcoal dark:text-cream uppercase tracking-wide">Analog
+                                            Presence.</strong> Digital signals remain beyond the threshold. This is a
+                                        space of focused presence.</p>
+                                </div>
+                            </div>
+                            <div class="space-y-8">
+                                <div class="flex gap-4">
+                                    <span class="text-primary font-bold serif-heading text-xl">IV.</span>
+                                    <p class="text-charcoal/80 dark:text-cream/80"><strong
+                                            class="text-charcoal dark:text-cream uppercase tracking-wide">Deep
+                                            Focus.</strong> Reading is not a race but a journey. Linger on a single page
+                                        as long as curiosity demands.</p>
+                                </div>
+                                <div class="flex gap-4">
+                                    <span class="text-primary font-bold serif-heading text-xl">V.</span>
+                                    <p class="text-charcoal/80 dark:text-cream/80"><strong
+                                            class="text-charcoal dark:text-cream uppercase tracking-wide">Shared
+                                            Wisdom.</strong> Marginalia is forbidden on our physical texts, but
+                                        intellectual exchange is our lifeblood.</p>
+                                </div>
+                                <div class="flex gap-4">
+                                    <span class="text-primary font-bold serif-heading text-xl">VI.</span>
+                                    <p class="text-charcoal/80 dark:text-cream/80"><strong
+                                            class="text-charcoal dark:text-cream uppercase tracking-wide">Legacy.</strong>
+                                        You are a temporary guardian of these stories. Leave them better than you found
+                                        them.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-16 pt-10 border-t border-charcoal/10 dark:border-cream/10 text-center">
+                            <p class="serif-heading italic text-charcoal/60 dark:text-cream/60">"In the presence of
+                                books, we are never truly alone."</p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <!-- Footer -->
+            <footer
+                class="bg-cream dark:bg-background-dark border-t border-charcoal/10 dark:border-cream/10 px-6 md:px-20 py-20">
+                <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+                    <div class="col-span-1 md:col-span-2">
+                        <div class="flex items-center gap-3 mb-8">
+                            <span class="material-symbols-outlined text-primary text-3xl">auto_stories</span>
+                            <h2 class="text-charcoal dark:text-cream text-lg font-bold tracking-tight uppercase">
+                                Literary Elegance</h2>
+                        </div>
+                        <p class="text-charcoal/60 dark:text-cream/60 max-w-sm mb-8 leading-relaxed">
+                            A non-profit foundation dedicated to the preservation of physical literature and the
+                            cultivation of deep reading habits in the digital age.
+                        </p>
+                        <div class="flex gap-6">
+                            <a class="text-charcoal/40 hover:text-primary transition-colors" href="#"><span
+                                    class="material-symbols-outlined">public</span></a>
+                            <a class="text-charcoal/40 hover:text-primary transition-colors" href="#"><span
+                                    class="material-symbols-outlined">mail</span></a>
+                            <a class="text-charcoal/40 hover:text-primary transition-colors" href="#"><span
+                                    class="material-symbols-outlined">location_on</span></a>
+                        </div>
+                    </div>
+                    <div>
+                        <h5 class="text-xs font-bold uppercase tracking-[0.2em] mb-8 text-charcoal dark:text-cream">
+                            Organization</h5>
+                        <ul class="space-y-4 text-sm text-charcoal/60 dark:text-cream/60">
+                            <li><a class="hover:text-primary transition-colors" href="#">Our Story</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Board of Directors</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Financial Reports</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="text-xs font-bold uppercase tracking-[0.2em] mb-8 text-charcoal dark:text-cream">
+                            Resources</h5>
+                        <ul class="space-y-4 text-sm text-charcoal/60 dark:text-cream/60">
+                            <li><a class="hover:text-primary transition-colors" href="#">Digital Archives</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Public Library Map</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Reading Lists</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div
+                    class="max-w-7xl mx-auto mt-20 pt-8 border-t border-charcoal/5 dark:border-cream/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                    <p class="text-[10px] text-charcoal/40 dark:text-cream/40 uppercase tracking-widest">
+                        © 2024 Literary Elegance NGO. All Rights Reserved.
+                    </p>
+                    <div class="flex gap-8 text-[10px] text-charcoal/40 dark:text-cream/40 uppercase tracking-widest">
+                        <a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+                        <a class="hover:text-primary transition-colors" href="#">Terms of Sanctuary</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

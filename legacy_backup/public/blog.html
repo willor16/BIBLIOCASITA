@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Literary Gazette &amp; Events</title>
+    <!-- Google Fonts: Newsreader for that high-end serif look -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "paper": "#fcfcfa",
+                        "ink": "#1a1a1a"
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Newsreader', serif;
+        }
+
+        .serif-italic {
+            font-style: italic;
+        }
+
+        .border-sep {
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .dark .border-sep {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-ink dark:text-slate-200 transition-colors duration-200">
+    <!-- Top Navigation Bar -->
+    <div
+        class="relative flex h-auto min-h-screen w-full flex-col bg-paper dark:bg-background-dark group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <!-- Header / Masthead -->
+            <header class="flex flex-col items-center border-b border-solid border-sep px-6 md:px-20 py-8">
+                <div class="w-full flex justify-between items-center mb-6">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-primary" style="font-size: 24px;">menu</span>
+                        <div class="hidden md:flex gap-6 text-xs uppercase tracking-widest font-semibold opacity-70">
+                            <a class="hover:text-primary transition-colors" href="#">Essays</a>
+                            <a class="hover:text-primary transition-colors" href="#">Fiction</a>
+                            <a class="hover:text-primary transition-colors" href="#">Poetry</a>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter text-ink dark:text-white">
+                            Literary <span class="serif-italic font-medium">Gazette</span>
+                        </h1>
+                        <p class="text-[10px] uppercase tracking-[0.3em] mt-2 opacity-60">Established 1924 • NGO for the
+                            Written Word</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <button class="material-symbols-outlined opacity-70">search</button>
+                        <button
+                            class="hidden md:block border border-ink dark:border-white px-4 py-1 text-xs uppercase tracking-widest font-bold hover:bg-ink hover:text-white dark:hover:bg-white dark:hover:text-ink transition-all">
+                            Subscribe
+                        </button>
+                        <div
+                            class="size-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-sm">person</span>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="w-full border-t border-sep pt-4 flex justify-between text-[11px] uppercase tracking-widest font-medium opacity-60">
+                    <span>Tuesday, October 24, 2023</span>
+                    <span>Volume CXII, No. 42</span>
+                    <span class="hidden md:inline">London / New York / Paris</span>
+                </div>
+            </header>
+            <!-- Main Content Area -->
+            <main class="px-6 md:px-20 py-10 max-w-[1440px] mx-auto w-full">
+                <!-- Hero Featured Article -->
+                <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16">
+                    <div class="lg:col-span-8">
+                        <div class="group cursor-pointer">
+                            <div class="relative overflow-hidden aspect-[16/9] mb-6">
+                                <img alt="Artistic stack of vintage books in soft light"
+                                    class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                                    data-alt="Artistic stack of vintage books in soft light"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaB3KGFCKHXjr1Ak4Q9_oDcya00zniuQ361YFcTJ1rSQ28FFw3ZmQ7w41Uz_I6SjsJfNLMy6EzlY3pfzCM0nMpbH00AF3EyK5-uXQqGRxpvL1sAlHMSKtVY1ljabLKeQbHFrWukcJntamOD6bliZ70r-oxwTw1edTVjrJj9Hrm1diDkN1mJp0fqW1CE7-i8u5Zwie37yIs6a2RC4VgA4ubLEyd_5crfuWnI6h8J78IdAec_-IoyhyYQRAChHgqGBpBdOQOQ_8uKA" />
+                            </div>
+                            <div class="max-w-3xl">
+                                <span class="text-primary text-xs font-bold uppercase tracking-widest mb-3 block">The
+                                    Lead / Digital Culture</span>
+                                <h2
+                                    class="text-4xl md:text-5xl font-bold leading-tight mb-4 group-hover:underline decoration-1 underline-offset-4">
+                                    The Renaissance of Print in the Digital Age: Why We Still Crave Tangible Pages
+                                </h2>
+                                <p class="text-lg opacity-80 leading-relaxed mb-4 font-light italic">
+                                    In an era of instant scrolling, the slow medium of paper is finding a new generation
+                                    of disciples who seek the sanctuary of the physical book.
+                                </p>
+                                <div class="flex items-center gap-3 text-xs font-semibold opacity-60">
+                                    <span>By Julian Thorne</span>
+                                    <span class="size-1 bg-ink dark:bg-white rounded-full"></span>
+                                    <span>12 Min Read</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sidebar: Short Briefs -->
+                    <div class="lg:col-span-4 border-l border-sep pl-0 lg:pl-10">
+                        <h3
+                            class="text-xs uppercase tracking-[0.2em] font-bold mb-8 opacity-50 border-b border-sep pb-2">
+                            Selected Briefs</h3>
+                        <div class="space-y-8">
+                            <article class="group cursor-pointer">
+                                <span
+                                    class="text-[10px] uppercase font-bold tracking-widest text-primary">Critique</span>
+                                <h4
+                                    class="text-xl font-bold mt-1 leading-snug group-hover:text-primary transition-colors">
+                                    The Melancholy of Modern Poetry</h4>
+                                <p class="text-sm mt-2 line-clamp-2 opacity-70">Exploring the shift from pastoral themes
+                                    to the industrial isolation of the 21st century.</p>
+                            </article>
+                            <article class="group cursor-pointer">
+                                <span
+                                    class="text-[10px] uppercase font-bold tracking-widest text-primary">Interview</span>
+                                <h4
+                                    class="text-xl font-bold mt-1 leading-snug group-hover:text-primary transition-colors">
+                                    An Afternoon with Elara Vance</h4>
+                                <p class="text-sm mt-2 line-clamp-2 opacity-70">The Booker Prize winner discusses the
+                                    "haunted" architecture of her latest novel.</p>
+                            </article>
+                            <article class="group cursor-pointer">
+                                <span
+                                    class="text-[10px] uppercase font-bold tracking-widest text-primary">Archives</span>
+                                <h4
+                                    class="text-xl font-bold mt-1 leading-snug group-hover:text-primary transition-colors">
+                                    Rediscovered Letters of Woolf</h4>
+                                <p class="text-sm mt-2 line-clamp-2 opacity-70">A cache of correspondence found in a
+                                    Sussex attic sheds new light on Bloomsbury.</p>
+                            </article>
+                        </div>
+                        <div class="mt-12 p-6 bg-slate-100 dark:bg-slate-900 rounded">
+                            <h5 class="text-sm font-bold mb-2">The Weekly Newsletter</h5>
+                            <p class="text-xs opacity-70 mb-4">Curated literary excellence delivered to your inbox every
+                                Sunday morning.</p>
+                            <div class="flex gap-2">
+                                <input
+                                    class="bg-white dark:bg-black border-none text-xs flex-1 px-3 py-2 rounded focus:ring-1 ring-primary"
+                                    placeholder="Email address" type="email" />
+                                <button
+                                    class="bg-primary text-white text-[10px] uppercase font-bold px-4 py-2 rounded">Join</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Events Section Header -->
+                <div class="border-y border-sep py-4 mb-10 flex flex-col md:flex-row justify-between items-center">
+                    <h2 class="text-2xl font-bold uppercase tracking-tighter italic">Upcoming <span
+                            class="not-italic">Literary Events</span></h2>
+                    <div class="flex gap-4 mt-4 md:mt-0">
+                        <button
+                            class="text-xs uppercase font-bold flex items-center gap-1 hover:text-primary transition-colors">
+                            View Calendar <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Three-Column Event Grid -->
+                <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                    <!-- Event 1 -->
+                    <div class="flex flex-col border-b border-sep md:border-b-0 md:pb-0 pb-8">
+                        <div class="relative aspect-video mb-4 overflow-hidden">
+                            <img alt="Classy evening bookstore event"
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                data-alt="Classy evening bookstore event"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7DsCWxBwmHnWirT0T55CzwBnOVxRtj2-v_ntVOJwFV3zo3hxKmNkWpUWFAOR_q0H7fryOZ_Vkx0RpkD_BmCdds8maOvr9HRvF0Sh2wgfmc5XWbSoQwcAe0kwj6ddOxqkSqyYgdZ-PxJbxLUaK-m7MnVrcj6lLeiOZWL3l1lsfsFZUMq7I4UsjB-_lIqoX-QAw0yKrCRQN4FD_YQ-YmFNbJJQi55OCsMT1ZWecBvESeATdut8UYEpwtFi0LtHBuVc3CPx28AfWOg" />
+                            <div
+                                class="absolute top-2 left-2 bg-paper dark:bg-background-dark px-3 py-1 flex flex-col items-center">
+                                <span class="text-lg font-bold">28</span>
+                                <span class="text-[9px] uppercase font-bold -mt-1">Oct</span>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-primary uppercase tracking-widest mb-1">Gala Evening</span>
+                        <h3 class="text-2xl font-bold mb-2">Annual Book Benefactors Gala</h3>
+                        <p class="text-sm opacity-70 mb-4 leading-relaxed">A night of celebration for the donors who
+                            make our literacy programs possible. Hosted at the Grand Library.</p>
+                        <div class="mt-auto flex items-center gap-2 opacity-60 text-xs">
+                            <span class="material-symbols-outlined text-sm">location_on</span>
+                            <span data-location="New York City">New York City</span>
+                        </div>
+                    </div>
+                    <!-- Event 2 -->
+                    <div class="flex flex-col border-b border-sep md:border-b-0 md:pb-0 pb-8">
+                        <div class="relative aspect-video mb-4 overflow-hidden">
+                            <img alt="A group of people discussing books"
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                data-alt="A group of people discussing books"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAREp9Vdo2CcXI9ICli8PUcP58N5msbpgk1eTvjVCCiN_mJbE0iL0iZhIKUB1DRUnTzYRk5B_hJrP_WwH1Tu9fuWJmYJu8nlvdeZL_2aZQwMajydeRh8fXEPlKYAkaEWaokZ7hdqTRhsrBo5qBUm6-yHh9Nx9SYDdngHtLGRw2Nbl5F1yDQ51Po2eogOG79z6pU19h-AlPv8h_e08gO-6P2a4ZdM5KoCwCiKM7jHl713ZCacBZMQcgI9WVrr-_RHXfI6mpLzy3-xg" />
+                            <div
+                                class="absolute top-2 left-2 bg-paper dark:bg-background-dark px-3 py-1 flex flex-col items-center">
+                                <span class="text-lg font-bold">04</span>
+                                <span class="text-[9px] uppercase font-bold -mt-1">Nov</span>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-primary uppercase tracking-widest mb-1">Workshop</span>
+                        <h3 class="text-2xl font-bold mb-2">The Craft of the Short Story</h3>
+                        <p class="text-sm opacity-70 mb-4 leading-relaxed">Join Pulitzer finalist Marcus Reed for an
+                            intensive weekend seminar on narrative pacing and economy.</p>
+                        <div class="mt-auto flex items-center gap-2 opacity-60 text-xs">
+                            <span class="material-symbols-outlined text-sm">location_on</span>
+                            <span data-location="Oxford">Oxford, UK</span>
+                        </div>
+                    </div>
+                    <!-- Event 3 -->
+                    <div class="flex flex-col">
+                        <div class="relative aspect-video mb-4 overflow-hidden">
+                            <img alt="Cozy reading space with lamps"
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                data-alt="Cozy reading space with lamps"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuArOxfNHmsacpKEM2F5k7mEH6AFWJoZ2irh250QPxIPFWMUqvONFRMfLaa_LHrccmr6GGAz0LLUCxocFrOZZKobNl5WrpPRkbbwQsRHOB1u08jDyqRuNvFrDhaXdMOP2w0K43mQO5CJPs7we-VVcB9bl16VZsxnSMvhkZG6bW2cBjGSAcWHaFWBRHG8DGLDJRN3YilrivX0qyjGoHxA7kjY2yX8rClfPuHTe7C-DWPU0E28Upbjg5QXC-o_G8nhP_cqG6dKnjLeUQ" />
+                            <div
+                                class="absolute top-2 left-2 bg-paper dark:bg-background-dark px-3 py-1 flex flex-col items-center">
+                                <span class="text-lg font-bold">12</span>
+                                <span class="text-[9px] uppercase font-bold -mt-1">Nov</span>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-primary uppercase tracking-widest mb-1">Youth Program</span>
+                        <h3 class="text-2xl font-bold mb-2">Midnight Poetry Slam</h3>
+                        <p class="text-sm opacity-70 mb-4 leading-relaxed">Our annual competition for young writers.
+                            Witness the raw power of the next generation's voices.</p>
+                        <div class="mt-auto flex items-center gap-2 opacity-60 text-xs">
+                            <span class="material-symbols-outlined text-sm">location_on</span>
+                            <span data-location="Paris">The Latin Quarter, Paris</span>
+                        </div>
+                    </div>
+                </section>
+                <!-- Bottom Dispatch Grid -->
+                <h3 class="text-xs uppercase tracking-[0.2em] font-bold mb-8 text-center opacity-40">More Dispatches
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div class="flex flex-col group cursor-pointer">
+                        <div class="aspect-square bg-slate-200 mb-3 overflow-hidden">
+                            <img alt="Close up of book pages" class="w-full h-full object-cover"
+                                data-alt="Close up of book pages"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNBB1mg052F1c6i764zgp536XZWJxo5jqZivc6XuJtClWbmOli24s__cvMQ4Gz3nTQSnVhFxci32RMzHLgBMW6ptGEhjlf7_8w4uVU7uewDtxW74NoFurxN9fK6DaGUHpoSDaB7zRq2bAR_GYX_JqNRpkd6SSL8q1v7y9nBvXMK7hkP1pdBEj8Zf9gWWEYLuLQNlMa8R4waludTrPrwGvdo83I-INIs7rM5qOSU7pM6JO6A_gNQRxYrQESGE-BM7moITsBaooPmg" />
+                        </div>
+                        <h5 class="font-bold text-sm leading-tight group-hover:text-primary transition-colors">On
+                            Victorian Verse and the Dawn of Industrialism</h5>
+                    </div>
+                    <div class="flex flex-col group cursor-pointer">
+                        <div class="aspect-square bg-slate-200 mb-3 overflow-hidden">
+                            <img alt="Writer at a desk with typewriter" class="w-full h-full object-cover"
+                                data-alt="Writer at a desk with typewriter"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHAAYdPJWRC2FkrpBeLjNm2ZXPI_zVxz_UAXaD57ALp6ZnC4fJ0nA9Ocsme16XtPQmlkTrsVKAz6iVlMme4dWPJ8cJsdSOrz7tuaO4CAlJwd9vK5MVuy8e34BQfpqm93qWuflaJRaFQKVU0OsSvvvIeaeeQtKBLIVCY_y7Qh3PxLuvz8mbhRmiGfh4w58EPAjghkSZTkNvaLVVA_MPUrSMubb7nT-9DoN35wpPyl5fyOdY_48CqYer5I5ZB8wAVoazijGOvyiy5Q" />
+                        </div>
+                        <h5 class="font-bold text-sm leading-tight group-hover:text-primary transition-colors">The
+                            Solitude of the Long-Distance Writer</h5>
+                    </div>
+                    <div class="flex flex-col group cursor-pointer">
+                        <div class="aspect-square bg-slate-200 mb-3 overflow-hidden">
+                            <img alt="Modern bookstore architecture" class="w-full h-full object-cover"
+                                data-alt="Modern bookstore architecture"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8F0MQkVfOTHHTLxX7j7tHd3yGm1erYrQcIF6EbXglMI5HFkoOptQ52td9OWmZYFkZ9oNZ0KvBDDiFzwmm75hpY0FBwsbsBgwHcpasiNWaYoVWEulUPx30tVMylrt2A03NEBuFUHeGpvyIaeZNZacG79eA2O5AdJof6tUVfho57Ibic15bQB1Lv5QasQy0TOCbSuUg38kRwtTEsv4RNNH9A04kt5x5Uj2Im_CS-ECjQtBKFdBjII8MmyEIVV46nCSLDM3GfPxBvg" />
+                        </div>
+                        <h5 class="font-bold text-sm leading-tight group-hover:text-primary transition-colors">Brutalist
+                            Libraries: Architecture for the Mind</h5>
+                    </div>
+                    <div class="flex flex-col group cursor-pointer">
+                        <div class="aspect-square bg-slate-200 mb-3 overflow-hidden">
+                            <img alt="Portrait of a young poet" class="w-full h-full object-cover"
+                                data-alt="Portrait of a young poet"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtcuATmUuViF_cXV7HjA97I7aJ4JfuPKgdkwZ3Y635D0CWJ63KSAUuP7mDcLtf0ycDeiuYxwCUyN8CLRLvlwGLHy-jOvg4URlxte1K3xTZotRrCwDWED-FOSeVmvw4Ftr7z0ilKk1cb1jCoMS1Bxm34PcclOnGOoOx_GvJjlZU_xpwsBVkZx294W7Nv6tL1HG6Tew9y1MlSNbRQFcpk8oBFmP8gzPsFrMyv9waLdVDdhsUv0cLXQPEvy9Y_BdoMWtzQpOmplOVNg" />
+                        </div>
+                        <h5 class="font-bold text-sm leading-tight group-hover:text-primary transition-colors">Digital
+                            Archiving: Preserving the Ephemeral</h5>
+                    </div>
+                </div>
+            </main>
+            <!-- Footer Section -->
+            <footer class="bg-ink text-white dark:bg-black pt-20 pb-10 px-6 md:px-20 mt-20">
+                <div class="max-w-[1440px] mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                        <div class="md:col-span-2">
+                            <h2 class="text-3xl font-bold italic mb-6">Literary Gazette</h2>
+                            <p class="text-sm opacity-60 leading-relaxed max-w-sm mb-6">
+                                We are an independent NGO dedicated to the preservation of high-end literary culture and
+                                the promotion of literacy across the globe. Our gazette is a testament to the enduring
+                                power of the written word.
+                            </p>
+                            <div class="flex gap-4">
+                                <span
+                                    class="material-symbols-outlined opacity-60 hover:opacity-100 cursor-pointer">social_leaderboard</span>
+                                <span
+                                    class="material-symbols-outlined opacity-60 hover:opacity-100 cursor-pointer">camera</span>
+                                <span
+                                    class="material-symbols-outlined opacity-60 hover:opacity-100 cursor-pointer">alternate_email</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-xs uppercase tracking-widest font-bold mb-6 opacity-40">Journal</h4>
+                            <ul class="space-y-4 text-sm font-medium">
+                                <li><a class="opacity-70 hover:opacity-100" href="#">Archives</a></li>
+                                <li><a class="opacity-70 hover:opacity-100" href="#">The Critic's Corner</a></li>
+                                <li><a class="opacity-70 hover:opacity-100" href="#">Fiction Showcase</a></li>
+                                <li><a class="opacity-70 hover:opacity-100" href="#">Manuscript Submissions</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xs uppercase tracking-widest font-bold mb-6 opacity-40">Foundation</h4>
+                            <ul class="space-y-4 text-sm font-medium">
+                                <li><a class="opacity-70 hover:opacity-100" href="#">Our Mission</a></li>
+                                <li><a class="opacity-70 hover:opacity-100" href="#">Grant Programs</a></li>
+                                <li><a class="opacity-70 hover:opacity-100" href="#">Literacy Outreach</a></li>
+                                <li><a class="opacity-70 hover:opacity-100" href="#">Annual Reports</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div
+                        class="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest opacity-40">
+                        <p>© 2023 Literary Gazette Foundation. All rights reserved.</p>
+                        <div class="flex gap-8 mt-4 md:mt-0">
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms of Service</a>
+                            <a href="#">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

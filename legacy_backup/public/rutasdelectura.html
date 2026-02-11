@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Curated Reading Paths | LiteraryRoutes</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#17a1cf",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111d21",
+                    },
+                    fontFamily: {
+                        "display": ["Noto Serif", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+        }
+
+        .font-serif {
+            font-family: 'Noto Serif', serif;
+        }
+
+        .book-shadow {
+            box-shadow: 15px 15px 30px -10px rgba(0, 0, 0, 0.2), 5px 5px 10px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-[#0e181b] dark:text-gray-100 transition-colors duration-300">
+    <!-- Top Navigation Bar -->
+    <header
+        class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-[#e7f0f3] dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-20 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-10">
+                <div class="flex items-center gap-3">
+                    <div class="text-primary">
+                        <svg class="w-8 h-8" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z"
+                                fill="currentColor"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-xl font-bold font-display tracking-tight">LiteraryRoutes</h2>
+                </div>
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a class="hover:text-primary transition-colors" href="#">Reading Routes</a>
+                    <a class="hover:text-primary transition-colors" href="#">The Library</a>
+                    <a class="hover:text-primary transition-colors" href="#">Our Mission</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="relative hidden sm:block">
+                    <span
+                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg">search</span>
+                    <input
+                        class="pl-10 pr-4 py-2 bg-gray-100 dark:bg-gray-800 border-none rounded-lg text-sm w-48 focus:ring-1 focus:ring-primary focus:w-64 transition-all"
+                        placeholder="Search paths..." type="text" />
+                </div>
+                <button
+                    class="bg-primary text-white px-6 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all">Sign
+                    In</button>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-6 lg:px-20 py-12">
+        <!-- Breadcrumbs & Hero -->
+        <div class="mb-20 text-center max-w-3xl mx-auto">
+            <nav
+                class="flex justify-center items-center gap-2 text-sm text-gray-500 mb-8 uppercase tracking-widest font-sans">
+                <a class="hover:text-primary" href="#">Home</a>
+                <span class="material-symbols-outlined text-xs">chevron_right</span>
+                <span class="text-gray-900 dark:text-gray-100 font-bold">Curated Reading Paths</span>
+            </nav>
+            <h1 class="text-5xl lg:text-7xl font-display font-bold mb-6 italic">The Human Condition</h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400 font-serif leading-relaxed italic">
+                “A journey through the essence of timeless literature, curated for the seeker of deeper meaning.”
+            </p>
+            <div class="mt-10 h-px w-24 bg-primary/40 mx-auto"></div>
+        </div>
+        <!-- Curated Collection Grid -->
+        <section class="space-y-32 mb-40">
+            <!-- Book 1 -->
+            <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+                <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+                    <div class="relative group">
+                        <img alt="Elegantly bound classic novel"
+                            class="w-[320px] h-[480px] object-cover rounded-lg book-shadow transform group-hover:rotate-1 transition-transform duration-500"
+                            data-alt="Modern minimalist book cover with blue aesthetic"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZGkXN3VVt2ph7kOuaRQ2KA4z3S8rUTobaxWVzDfXQxC9f9UL3PhrzaicZjT8ev5N5dqUOl9ln6EI8gcCgtyJZ1ASgOiz8k1UEnWvkmjZah77RBM56FuCesw7cUi5fTAZMr_WdBdXr9bjCKrmFJ2wV_KAkwaOX8vQgvh3jA5cbrGPDntkznYLWQHqe-XCXlRkwEFyVnXUcoN_e-FSFtX17YUKrSFvpQZVyRYGulSv6oBBLvqc-f8WmMEj4dkCVRVsBwN4Np7qBkA" />
+                        <div
+                            class="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-100 dark:border-gray-700 max-w-[200px]">
+                            <p class="text-[10px] uppercase tracking-tighter text-gray-400 mb-1">Estimated Reading Time
+                            </p>
+                            <p class="font-display font-bold text-lg">12 Hours</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <div class="max-w-md">
+                        <span class="text-primary font-bold text-sm tracking-widest uppercase">Volume I</span>
+                        <h2 class="text-4xl font-display font-bold mt-4 mb-2">The Alchemist</h2>
+                        <h3 class="text-xl text-gray-500 italic mb-8">Paulo Coelho</h3>
+                        <div
+                            class="relative p-8 bg-white dark:bg-gray-800 rounded-xl border-l-4 border-primary shadow-sm">
+                            <span
+                                class="material-symbols-outlined absolute -top-4 -left-4 text-primary bg-background-light dark:bg-background-dark p-2 rounded-full">format_quote</span>
+                            <p class="text-gray-700 dark:text-gray-300 font-serif leading-relaxed italic">
+                                "This narrative serves as the cornerstone of our route. It challenges the reader to look
+                                beyond the immediate horizon, offering a philosophical map for those pursuing their own
+                                Personal Legend."
+                            </p>
+                            <div class="mt-4 flex items-center gap-2">
+                                <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-primary text-sm">edit_note</span>
+                                </div>
+                                <span class="text-xs font-bold uppercase tracking-widest">Curator's Insight</span>
+                            </div>
+                        </div>
+                        <button
+                            class="mt-10 flex items-center gap-2 text-primary font-bold border-b-2 border-primary/20 hover:border-primary transition-all pb-1 group">
+                            Explore Chapters
+                            <span
+                                class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Book 2 (Reversed) -->
+            <div class="flex flex-col lg:flex-row-reverse items-center gap-16 lg:gap-24">
+                <div class="w-full lg:w-1/2 flex justify-center lg:justify-start">
+                    <div class="relative group">
+                        <img alt="Ancient manuscript style book"
+                            class="w-[320px] h-[480px] object-cover rounded-lg book-shadow transform group-hover:-rotate-1 transition-transform duration-500"
+                            data-alt="Vintage textured book cover on wooden table"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfK3VlgyEpG5Lhui_XxcpkQOkg6VgfOldRcjU4VbxBeWXYR6H7ZFyySmNRF0Rg_ujDnYsaUXEx6N9e7k_ncBjHMT5CtCyUu2T6AFlkaqqXwpbtfsemwHAo3lhmUHs5sJprJQmQSnzhm81RqToQ0ZcYUpMmgo6gCkvZO1dk003C2XrizlK_Thjb86cUJniU1_5EZ75rlSIvXY9XeJXsSw0RUqo0HerMSM6qLldtzLd-RWr9A4DDk-8yGBtzHrTHLt5Mx33HBg5jBQ" />
+                        <div
+                            class="absolute -bottom-6 -left-6 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-100 dark:border-gray-700 max-w-[200px]">
+                            <p class="text-[10px] uppercase tracking-tighter text-gray-400 mb-1">Depth Level</p>
+                            <p class="font-display font-bold text-lg">Advanced</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 flex justify-end">
+                    <div class="max-w-md text-right">
+                        <span class="text-primary font-bold text-sm tracking-widest uppercase">Volume II</span>
+                        <h2 class="text-4xl font-display font-bold mt-4 mb-2">Meditations</h2>
+                        <h3 class="text-xl text-gray-500 italic mb-8">Marcus Aurelius</h3>
+                        <div
+                            class="relative p-8 bg-white dark:bg-gray-800 rounded-xl border-r-4 border-primary shadow-sm text-left">
+                            <span
+                                class="material-symbols-outlined absolute -top-4 -right-4 text-primary bg-background-light dark:bg-background-dark p-2 rounded-full">history_edu</span>
+                            <p class="text-gray-700 dark:text-gray-300 font-serif leading-relaxed italic">
+                                "A transition from fiction to the stoic reality of leadership. This manual for the soul
+                                provides the structural integrity needed to process the existential questions raised in
+                                our previous reading."
+                            </p>
+                            <div class="mt-4 flex items-center justify-end gap-2">
+                                <span class="text-xs font-bold uppercase tracking-widest">Curator's Insight</span>
+                                <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-primary text-sm">verified</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button
+                            class="mt-10 inline-flex items-center gap-2 text-primary font-bold border-b-2 border-primary/20 hover:border-primary transition-all pb-1 group">
+                            Explore Chapters
+                            <span
+                                class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- The Reader's Manual Section -->
+        <section
+            class="bg-white dark:bg-gray-800/50 rounded-2xl p-12 lg:p-20 border border-gray-100 dark:border-gray-800">
+            <div class="flex flex-col lg:flex-row gap-16">
+                <div class="lg:w-1/3">
+                    <h2 class="text-3xl font-display font-bold mb-6">The Reader's Manual</h2>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+                        Elevate your engagement with the text. Our curated methods for deep absorption and intellectual
+                        synthesis.
+                    </p>
+                    <button
+                        class="w-full py-4 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined">download</span>
+                        Download Full Guide
+                    </button>
+                </div>
+                <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="flex gap-4">
+                        <span class="text-primary font-display text-4xl font-bold opacity-30">01</span>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">draw</span>
+                                Marginalia Ethics
+                            </h4>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                                Use a soft graphite pencil. Marks should be conversational—respond to the author as if
+                                they are sitting across from you.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="text-primary font-display text-4xl font-bold opacity-30">02</span>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">potted_plant</span>
+                                The Setting
+                            </h4>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                                Curate your environment. Natural light, a single source of warmth, and silence are the
+                                foundations of deep reading.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="text-primary font-display text-4xl font-bold opacity-30">03</span>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">timer</span>
+                                The 20-Minute Rule
+                            </h4>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                                Commit to twenty minutes of uninterrupted focus. The transition from digital noise to
+                                literary depth takes time.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="text-primary font-display text-4xl font-bold opacity-30">04</span>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">forum</span>
+                                Dialectical Loops
+                            </h4>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                                After each chapter, write a single sentence summary. This synthesis anchors the
+                                narrative in your long-term memory.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Newsletter / Community CTA -->
+        <section class="mt-40 text-center pb-20">
+            <div class="max-w-2xl mx-auto py-16 px-8 bg-primary/5 rounded-3xl border border-primary/10">
+                <span class="material-symbols-outlined text-4xl text-primary mb-4">auto_stories</span>
+                <h2 class="text-3xl font-display font-bold mb-4">Continue the Journey</h2>
+                <p class="text-gray-600 dark:text-gray-400 mb-8">Join 15,000+ seekers receiving weekly curated routes
+                    and literary meditations.</p>
+                <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                    <input
+                        class="flex-1 rounded-lg border-gray-200 dark:bg-gray-800 dark:border-gray-700 focus:ring-primary focus:border-primary"
+                        placeholder="Your email address" type="email" />
+                    <button
+                        class="bg-primary text-white px-8 py-3 rounded-lg font-bold hover:shadow-lg transition-all">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-6 lg:px-20 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-3 opacity-60 grayscale hover:grayscale-0 transition-all">
+                <div class="text-gray-900 dark:text-white">
+                    <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 48 48">
+                        <path
+                            d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z">
+                        </path>
+                    </svg>
+                </div>
+                <h2 class="text-sm font-bold font-display tracking-tight">LiteraryRoutes</h2>
+            </div>
+            <div class="flex gap-8 text-xs font-bold uppercase tracking-widest text-gray-400">
+                <a class="hover:text-primary" href="#">Archive</a>
+                <a class="hover:text-primary" href="#">Ethics</a>
+                <a class="hover:text-primary" href="#">Contact</a>
+                <a class="hover:text-primary" href="#">Privacy</a>
+            </div>
+            <p class="text-xs text-gray-400">© 2024 LiteraryRoutes NGO. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

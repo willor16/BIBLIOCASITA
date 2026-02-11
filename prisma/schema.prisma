@@ -1,0 +1,64 @@
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model News {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  date        DateTime @default(now())
+  author      String?
+  image       String?
+  createdAt   DateTime @default(now())
+}
+
+model Location {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  image       String?
+  googleMapsUrl String?
+  createdAt   DateTime @default(now())
+}
+
+model ReadingRoute {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  tips        String?
+  books       Book[]
+  createdAt   DateTime @default(now())
+}
+
+model Book {
+  id             String       @id @default(cuid())
+  title          String
+  author         String
+  description    String
+  image          String?
+  readingRoute   ReadingRoute @relation(fields: [readingRouteId], references: [id], onDelete: Cascade)
+  readingRouteId String
+}
+
+model AdminUser {
+  id       String @id @default(cuid())
+  username String @unique
+  password String // Hashed
+}
+
+model Tip {
+  id          String   @id @default(cuid())
+  order       Int      @default(0)
+  title       String
+  content     String
+  category    String?
+  image       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
