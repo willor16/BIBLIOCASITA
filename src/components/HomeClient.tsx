@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Target, Eye, Compass, X, Instagram, Linkedin, Mail, Youtube, Facebook } from 'lucide-react';
 import Carousel from '@/components/Carousel';
+import { HERO_BG, HISTORY_IMG, FOUNDER_IMG } from '@/lib/cloudinary';
 
 interface NewsItem {
     id: string;
@@ -27,7 +28,7 @@ export default function HomeClient({ news }: HomeClientProps) {
             <section className="relative h-[90vh] flex items-center justify-center overflow-hidden bg-charcoal">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/images/Descripcion 2.jpg"
+                        src={HERO_BG}
                         alt="Bibliocasita Library"
                         fill
                         sizes="100vw"
@@ -150,7 +151,7 @@ export default function HomeClient({ news }: HomeClientProps) {
                     <div className="w-full md:w-1/2">
                         <div className="relative h-[400px] md:h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl">
                             <Image
-                                src="/images/foto 1ra.jpg"
+                                src={HISTORY_IMG}
                                 alt="Espacio de lectura"
                                 fill
                                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -215,7 +216,7 @@ export default function HomeClient({ news }: HomeClientProps) {
                             <div className="flex flex-col md:flex-row">
                                 <div className="w-full md:w-1/2 relative h-64 md:h-auto min-h-[300px]">
                                     <Image
-                                        src="/images/IMG-20241224-WA0008.jpg"
+                                        src={FOUNDER_IMG}
                                         alt="Apoyando a Bibliocasita"
                                         fill
                                         className="object-cover"

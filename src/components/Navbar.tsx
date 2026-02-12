@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { LOGO_IMG } from '@/lib/cloudinary';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +24,7 @@ export default function Navbar() {
                     <Link href="/" className="flex items-center gap-3 group">
                         <div className="relative w-12 h-12">
                             <Image
-                                src="/images/lOGO BIBLIOCASITA.png"
+                                src={LOGO_IMG}
                                 alt="Bibliocasita Logo"
                                 fill
                                 className="object-contain"

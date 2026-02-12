@@ -4,16 +4,9 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { CAROUSEL_IMAGES } from '@/lib/cloudinary';
 
-const carouselImages = [
-    '/images/Descripcion 2.jpg',
-    '/images/Descripción 1.jpg',
-    '/images/Foto 1a.jpg',
-    '/images/Foto 2da.jpg',
-    '/images/Foto 3ra.jpg',
-    '/images/IMG-20240914-WA0003.jpg',
-    '/images/IMG-20241124-WA0012.jpg',
-];
+const carouselImages = CAROUSEL_IMAGES;
 
 export default function Carousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
