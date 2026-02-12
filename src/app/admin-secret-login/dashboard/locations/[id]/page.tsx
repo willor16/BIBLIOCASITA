@@ -3,7 +3,7 @@ import { useState, useEffect, use } from 'react';
 import { useRouter } from 'next/navigation';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
+import CloudinaryUpload from '@/components/CloudinaryUpload';
 
 export default function EditLocationPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = use(params);
@@ -11,13 +11,11 @@ export default function EditLocationPage({ params }: { params: Promise<{ id: str
     const [description, setDescription] = useState('');
     const [image, setImage] = useState('');
     const [googleMapsUrl, setGoogleMapsUrl] = useState('');
-    const [images, setImages] = useState<string[]>([]);
     const [loading, setLoading] = useState(false);
     const [fetching, setFetching] = useState(true);
     const router = useRouter();
 
     useEffect(() => {
-        fetch('/api/images').then(res => res.json()).then(data => setImages(data));
         fetch(`/api/locations/${id}`)
             .then(res => res.json())
             .then(data => {
@@ -90,32 +88,11 @@ export default function EditLocationPage({ params }: { params: Promise<{ id: str
                     />
                 </div>
 
-                <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">Imagen</label>
-                    <div className="border border-gray-200 rounded p-4">
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-h-60 overflow-y-auto pr-2 custom-scrollbar">
-                            {images.map(img => (
-                                <div
-                                    key={img}
-                                    onClick={() => setImage(img)}
-                                    className={`relative cursor-pointer aspect-square rounded overflow-hidden border-2 transition-all ${image === img ? 'border-primary ring-2 ring-primary/50' : 'border-transparent hover:border-gray-300'}`}
-                                >
-                                    <img src={img} className="w-full h-full object-cover" />
-                                    {image === img && (
-                                        <div className="absolute inset-0 bg-primary/20 flex items-center justify-center">
-                                            <div className="bg-primary text-white rounded-full p-1">
-                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
-                            ))}
-                        </div>
-                        {image && <p className="mt-2 text-xs text-green-600 font-bold">Imagen seleccionada: {image.split('/').pop()}</p>}
-                    </div>
-                </div>
+                <CloudinaryUpload
+                    onImageUrl={(url) => setImage(url)}
+                    currentImage={image}
+                    label="Imagen"
+                />
 
                 <div className="pt-4 border-t border-gray-100">
                     <button

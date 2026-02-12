@@ -92,6 +92,13 @@ export default async function TipsPage() {
                                                         <p className="text-charcoal/70 leading-relaxed font-display whitespace-pre-line">
                                                             {tip.content}
                                                         </p>
+                                                        {tip.quote && (
+                                                            <blockquote className="mt-4 border-l-4 border-primary pl-4 py-2">
+                                                                <p className="text-charcoal/60 italic font-serif text-base">
+                                                                    {tip.quote}
+                                                                </p>
+                                                            </blockquote>
+                                                        )}
                                                     </div>
                                                 </div>
                                             </div>

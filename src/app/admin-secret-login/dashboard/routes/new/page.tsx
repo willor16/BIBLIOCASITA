@@ -10,18 +10,20 @@ interface Book {
     author: string;
     description: string;
     image: string;
+    quote: string;
 }
 
 export default function NewRoutePage() {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [tips, setTips] = useState('');
+    const [quote, setQuote] = useState('');
     const [books, setBooks] = useState<Book[]>([]);
     const [loading, setLoading] = useState(false);
     const router = useRouter();
 
     const addBook = () => {
-        setBooks([...books, { title: '', author: '', description: '', image: '' }]);
+        setBooks([...books, { title: '', author: '', description: '', image: '', quote: '' }]);
     };
 
     const removeBook = (index: number) => {
@@ -41,7 +43,7 @@ export default function NewRoutePage() {
         setLoading(true);
         await fetch('/api/routes', {
             method: 'POST',
-            body: JSON.stringify({ title, description, tips, books }),
+            body: JSON.stringify({ title, description, tips, quote, books }),
         });
         router.push('/admin-secret-login/dashboard/routes');
         router.refresh();
@@ -89,6 +91,16 @@ export default function NewRoutePage() {
                             rows={2}
                             className="w-full p-3 border border-gray-200 rounded focus:border-primary focus:ring-1 focus:ring-primary outline-none text-gray-900"
                             placeholder="Sugerencias para los lectores..."
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-sm font-bold text-gray-700 mb-2">Frase Célebre de la Ruta (opcional)</label>
+                        <input
+                            type="text"
+                            value={quote}
+                            onChange={(e) => setQuote(e.target.value)}
+                            className="w-full p-3 border border-gray-200 rounded focus:border-primary focus:ring-1 focus:ring-primary outline-none text-gray-900 italic"
+                            placeholder='Ej. "Leer es soñar con los ojos abiertos."'
                         />
                     </div>
                 </div>
@@ -146,6 +158,16 @@ export default function NewRoutePage() {
                                         currentImage={book.image}
                                         label="Portada"
                                     />
+                                    <div className="mt-3">
+                                        <label className="block text-xs font-bold text-gray-500 mb-1">Frase Célebre del Libro</label>
+                                        <input
+                                            type="text"
+                                            value={book.quote}
+                                            onChange={(e) => updateBook(index, 'quote', e.target.value)}
+                                            className="w-full p-2 border border-gray-200 rounded focus:border-primary outline-none text-gray-900 italic text-sm"
+                                            placeholder='"Frase célebre del libro..."'
+                                        />
+                                    </div>
                                 </div>
                             </div>
                         </div>

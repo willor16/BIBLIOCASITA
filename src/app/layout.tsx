@@ -15,8 +15,8 @@ const workSans = Work_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Bibliocasita - Literary Elegance",
-  description: "A sanctuary for thought and reading.",
+  title: "Bibliocasita",
+  description: "Un santuario para el pensamiento y la lectura.",
   openGraph: {
     images: ['https://res.cloudinary.com/dqidjyjrm/image/upload/f_auto,q_auto/v1770879048/lOGO_BIBLIOCASITA_eosgpj.png'],
   },

@@ -12,6 +12,7 @@ export default function NewTipPage() {
     const [category, setCategory] = useState('');
     const [order, setOrder] = useState(0);
     const [image, setImage] = useState('');
+    const [quote, setQuote] = useState('');
     const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -20,7 +21,7 @@ export default function NewTipPage() {
         await fetch('/api/tips', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ title, content, category, order, image }),
+            body: JSON.stringify({ title, content, category, order, image, quote }),
         });
         router.push('/admin-secret-login/dashboard/tips');
         router.refresh();
@@ -89,6 +90,17 @@ export default function NewTipPage() {
                     currentImage={image}
                     label="Imagen (opcional)"
                 />
+
+                <div>
+                    <label className="block text-sm font-bold text-gray-700 mb-2">Frase Célebre (opcional)</label>
+                    <input
+                        type="text"
+                        value={quote}
+                        onChange={(e) => setQuote(e.target.value)}
+                        className="w-full p-3 border border-gray-200 rounded-lg focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-gray-900 italic"
+                        placeholder='Ej. "La lectura es una conversación con los más grandes." — Descartes'
+                    />
+                </div>
 
                 <div className="flex justify-end pt-4 border-t">
                     <button

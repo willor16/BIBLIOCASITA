@@ -4,7 +4,7 @@ import prisma from '@/lib/prisma';
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const { title, description, author, image } = body;
+        const { title, description, author, image, quote } = body;
 
         const news = await prisma.news.create({
             data: {
@@ -12,6 +12,7 @@ export async function POST(request: Request) {
                 description,
                 author,
                 image,
+                quote,
                 date: new Date(),
             },
         });

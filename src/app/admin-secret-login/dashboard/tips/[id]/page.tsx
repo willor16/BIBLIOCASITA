@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, Save } from 'lucide-react';
-import Image from 'next/image';
+import CloudinaryUpload from '@/components/CloudinaryUpload';
 
 export default function EditTipPage() {
     const router = useRouter();
@@ -13,8 +13,7 @@ export default function EditTipPage() {
     const [category, setCategory] = useState('');
     const [order, setOrder] = useState(0);
     const [image, setImage] = useState('');
-    const [images, setImages] = useState<string[]>([]);
-    const [showImagePicker, setShowImagePicker] = useState(false);
+    const [quote, setQuote] = useState('');
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -24,8 +23,8 @@ export default function EditTipPage() {
             setCategory(data.category || '');
             setOrder(data.order || 0);
             setImage(data.image || '');
+            setQuote(data.quote || '');
         });
-        fetch('/api/images').then(r => r.json()).then(setImages);
     }, [id]);
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -34,7 +33,7 @@ export default function EditTipPage() {
         await fetch(`/api/tips/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ title, content, category, order, image }),
+            body: JSON.stringify({ title, content, category, order, image, quote }),
         });
         router.push('/admin-secret-login/dashboard/tips');
         router.refresh();
@@ -98,49 +97,22 @@ export default function EditTipPage() {
                     />
                 </div>
 
-                <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">Imagen (opcional)</label>
-                    <div className="border border-gray-200 rounded-lg p-4">
-                        {image ? (
-                            <div className="flex items-center gap-4">
-                                <div className="relative h-20 w-32 rounded overflow-hidden bg-gray-100">
-                                    <Image src={image} alt="Preview" fill className="object-cover" />
-                                </div>
-                                <button type="button" onClick={() => setImage('')} className="text-red-500 text-sm font-medium">
-                                    Quitar imagen
-                                </button>
-                            </div>
-                        ) : (
-                            <button type="button" onClick={() => setShowImagePicker(true)} className="text-primary font-medium text-sm">
-                                + Seleccionar imagen
-                            </button>
-                        )}
-                    </div>
-                </div>
+                <CloudinaryUpload
+                    onImageUrl={(url) => setImage(url)}
+                    currentImage={image}
+                    label="Imagen (opcional)"
+                />
 
-                {showImagePicker && (
-                    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-                        <div className="bg-white rounded-lg max-w-2xl w-full max-h-[80vh] overflow-hidden">
-                            <div className="p-4 border-b flex justify-between items-center">
-                                <h3 className="font-bold text-charcoal">Seleccionar Imagen</h3>
-                                <button onClick={() => setShowImagePicker(false)} className="text-gray-400 hover:text-charcoal">
-                                    <ArrowLeft size={20} />
-                                </button>
-                            </div>
-                            <div className="p-4 overflow-y-auto max-h-[60vh] grid grid-cols-3 sm:grid-cols-4 gap-3">
-                                {images.map(img => (
-                                    <div
-                                        key={img}
-                                        onClick={() => { setImage(img); setShowImagePicker(false); }}
-                                        className={`relative aspect-square rounded-lg overflow-hidden cursor-pointer hover:ring-2 ring-primary transition-all bg-gray-100 ${image === img ? 'ring-2' : ''}`}
-                                    >
-                                        <Image src={img} alt="" fill className="object-cover" />
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                )}
+                <div>
+                    <label className="block text-sm font-bold text-gray-700 mb-2">Frase Célebre (opcional)</label>
+                    <input
+                        type="text"
+                        value={quote}
+                        onChange={(e) => setQuote(e.target.value)}
+                        className="w-full p-3 border border-gray-200 rounded-lg focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-gray-900 italic"
+                        placeholder='Ej. "La lectura es una conversación con los más grandes." — Descartes'
+                    />
+                </div>
 
                 <div className="flex justify-end pt-4 border-t">
                     <button

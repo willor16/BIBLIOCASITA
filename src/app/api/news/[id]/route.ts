@@ -20,10 +20,10 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
     try {
         const { id } = await params;
         const body = await request.json();
-        const { title, description, author, image } = body;
+        const { title, description, author, image, quote } = body;
         const news = await prisma.news.update({
             where: { id },
-            data: { title, description, author, image },
+            data: { title, description, author, image, quote },
         });
         return NextResponse.json(news);
     } catch (error) {

@@ -48,7 +48,7 @@ export default async function NewsDetailPage({ params }: Props) {
                             <ImageOff className="w-16 h-16" />
                         </div>
                     )}
-                    <Link href="/noticias" className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm p-3 rounded-full text-charcoal shadow-lg hover:bg-primary hover:text-white transition-all">
+                    <Link href="/blog" className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm p-3 rounded-full text-charcoal shadow-lg hover:bg-primary hover:text-white transition-all">
                         <ArrowLeft size={24} />
                     </Link>
                 </div>
@@ -68,6 +68,14 @@ export default async function NewsDetailPage({ params }: Props) {
                     <div className="prose prose-lg prose-headings:font-serif prose-a:text-primary max-w-none text-charcoal/80 font-display leading-relaxed whitespace-pre-wrap">
                         {news.description}
                     </div>
+
+                    {news.quote && (
+                        <blockquote className="mt-12 border-l-4 border-primary pl-6 py-4 bg-cream/50 rounded-r-lg">
+                            <p className="text-charcoal/80 italic font-serif text-xl leading-relaxed">
+                                {news.quote}
+                            </p>
+                        </blockquote>
+                    )}
                 </div>
             </article>
         </div>

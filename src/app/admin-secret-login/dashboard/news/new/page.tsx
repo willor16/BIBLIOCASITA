@@ -10,6 +10,7 @@ export default function NewNewsPage() {
     const [description, setDescription] = useState('');
     const [author, setAuthor] = useState('');
     const [image, setImage] = useState('');
+    const [quote, setQuote] = useState('');
     const [loading, setLoading] = useState(false);
     const router = useRouter();
 
@@ -18,7 +19,7 @@ export default function NewNewsPage() {
         setLoading(true);
         await fetch('/api/news', {
             method: 'POST',
-            body: JSON.stringify({ title, description, author, image }),
+            body: JSON.stringify({ title, description, author, image, quote }),
         });
         router.push('/admin-secret-login/dashboard/news');
         router.refresh();
@@ -74,6 +75,17 @@ export default function NewNewsPage() {
                     currentImage={image}
                     label="Imagen Destacada"
                 />
+
+                <div>
+                    <label className="block text-sm font-bold text-gray-700 mb-2">Frase Célebre (opcional)</label>
+                    <input
+                        type="text"
+                        value={quote}
+                        onChange={(e) => setQuote(e.target.value)}
+                        className="w-full p-3 border border-gray-200 rounded focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-gray-900 italic"
+                        placeholder='Ej. "Un lector vive mil vidas antes de morir." — George R.R. Martin'
+                    />
+                </div>
 
                 <div className="pt-4 border-t border-gray-100">
                     <button

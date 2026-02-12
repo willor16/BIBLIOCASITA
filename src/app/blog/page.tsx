@@ -31,39 +31,41 @@ export default async function BlogPage() {
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                         {news.map((item) => (
-                            <article key={item.id} className="bg-white group rounded-sm shadow-sm overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-100">
-                                <div className="relative h-64 w-full overflow-hidden">
-                                    {item.image ? (
-                                        <Image
-                                            src={item.image}
-                                            alt={item.title}
-                                            fill
-                                            className="object-cover group-hover:scale-105 transition-transform duration-700"
-                                        />
-                                    ) : (
-                                        <div className="w-full h-full bg-gray-100 flex items-center justify-center text-gray-400">
-                                            <ImageOff className="w-10 h-10" />
+                            <Link key={item.id} href={`/blog/${item.id}`} className="block">
+                                <article className="bg-white group rounded-sm shadow-sm overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-100 cursor-pointer">
+                                    <div className="relative h-64 w-full overflow-hidden">
+                                        {item.image ? (
+                                            <Image
+                                                src={item.image}
+                                                alt={item.title}
+                                                fill
+                                                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                            />
+                                        ) : (
+                                            <div className="w-full h-full bg-gray-100 flex items-center justify-center text-gray-400">
+                                                <ImageOff className="w-10 h-10" />
+                                            </div>
+                                        )}
+                                        <div className="absolute top-4 left-4 bg-white/90 backdrop-blur text-charcoal px-3 py-1 text-xs font-bold uppercase tracking-widest">
+                                            {new Date(item.date).toLocaleDateString('es-ES', { month: 'short', day: 'numeric', year: 'numeric' })}
                                         </div>
-                                    )}
-                                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur text-charcoal px-3 py-1 text-xs font-bold uppercase tracking-widest">
-                                        {new Date(item.date).toLocaleDateString('es-ES', { month: 'short', day: 'numeric', year: 'numeric' })}
                                     </div>
-                                </div>
-                                <div className="p-8 flex-grow flex flex-col">
-                                    {item.author && <span className="text-xs text-gray-400 uppercase tracking-wider mb-2">Por {item.author}</span>}
-                                    <h2 className="font-serif text-xl font-bold mb-4 text-charcoal group-hover:text-primary transition-colors leading-tight">
-                                        {item.title}
-                                    </h2>
-                                    <p className="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3 flex-grow">
-                                        {item.description}
-                                    </p>
-                                    <div className="pt-4 border-t border-gray-100">
-                                        <Link href={`/blog/${item.id}`} className="text-primary text-xs font-bold uppercase tracking-widest hover:text-charcoal transition-colors flex items-center gap-2">
-                                            Leer más <ArrowRight className="w-4 h-4" />
-                                        </Link>
+                                    <div className="p-8 flex-grow flex flex-col">
+                                        {item.author && <span className="text-xs text-gray-400 uppercase tracking-wider mb-2">Por {item.author}</span>}
+                                        <h2 className="font-serif text-xl font-bold mb-4 text-charcoal group-hover:text-primary transition-colors leading-tight">
+                                            {item.title}
+                                        </h2>
+                                        <p className="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3 flex-grow">
+                                            {item.description}
+                                        </p>
+                                        <div className="pt-4 border-t border-gray-100">
+                                            <span className="text-primary text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+                                                Leer más <ArrowRight className="w-4 h-4" />
+                                            </span>
+                                        </div>
                                     </div>
-                                </div>
-                            </article>
+                                </article>
+                            </Link>
                         ))}
                     </div>
                 )}

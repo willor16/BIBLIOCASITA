@@ -63,6 +63,13 @@ export default async function RoutesPage() {
                                             {route.description && (
                                                 <p className="text-white/70 text-lg max-w-3xl font-display">{route.description}</p>
                                             )}
+                                            {route.quote && (
+                                                <blockquote className="mt-6 border-l-4 border-primary pl-4 py-2">
+                                                    <p className="text-white/80 italic font-serif text-lg">
+                                                        {route.quote}
+                                                    </p>
+                                                </blockquote>
+                                            )}
                                         </div>
                                     </div>
 
@@ -117,6 +124,13 @@ export default async function RoutesPage() {
                                                                     </h4>
                                                                     <p className="text-sm text-primary font-medium mb-3">{book.author}</p>
                                                                     <p className="text-charcoal/60 text-sm line-clamp-3 font-display">{book.description}</p>
+                                                                    {book.quote && (
+                                                                        <blockquote className="mt-2 border-l-2 border-primary/50 pl-3 py-1">
+                                                                            <p className="text-charcoal/50 italic font-serif text-xs">
+                                                                                {book.quote}
+                                                                            </p>
+                                                                        </blockquote>
+                                                                    )}
                                                                 </div>
                                                             </div>
                                                         </div>

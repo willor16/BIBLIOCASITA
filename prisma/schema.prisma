@@ -15,6 +15,7 @@ model News {
   date        DateTime @default(now())
   author      String?
   image       String?
+  quote       String?
   createdAt   DateTime @default(now())
 }
 
@@ -32,6 +33,7 @@ model ReadingRoute {
   title       String
   description String?
   tips        String?
+  quote       String?
   books       Book[]
   createdAt   DateTime @default(now())
 }
@@ -42,6 +44,7 @@ model Book {
   author         String
   description    String
   image          String?
+  quote          String?
   readingRoute   ReadingRoute @relation(fields: [readingRouteId], references: [id], onDelete: Cascade)
   readingRouteId String
 }
@@ -59,6 +62,8 @@ model Tip {
   content     String
   category    String?
   image       String?
+  quote       String?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
+

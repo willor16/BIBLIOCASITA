@@ -15,7 +15,7 @@ export async function GET() {
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const { title, content, category, image, order } = body;
+        const { title, content, category, image, order, quote } = body;
 
         const tip = await prisma.tip.create({
             data: {
@@ -24,6 +24,7 @@ export async function POST(request: Request) {
                 category,
                 image,
                 order: order || 0,
+                quote,
             },
         });
         return NextResponse.json(tip, { status: 201 });

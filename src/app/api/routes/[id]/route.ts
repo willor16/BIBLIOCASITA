@@ -21,14 +21,14 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
     try {
         const { id } = await params;
         const body = await request.json();
-        const { title, description, tips, books } = body;
+        const { title, description, tips, quote, books } = body;
 
         // Perform a transaction to update route and replace books if provided
         const result = await prisma.$transaction(async (tx) => {
             // Update route details
             const updatedRoute = await tx.readingRoute.update({
                 where: { id },
-                data: { title, description, tips },
+                data: { title, description, tips, quote },
             });
 
             if (books) {
@@ -46,6 +46,7 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
                             author: book.author,
                             description: book.description,
                             image: book.image,
+                            quote: book.quote,
                             readingRouteId: id,
                         },
                     });
