@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "Bibliocasita - Literary Elegance",
   description: "A sanctuary for thought and reading.",
   openGraph: {
-    images: ['https://res.cloudinary.com/dqidjyjrm/image/upload/f_auto,q_auto/bibliocasita/lOGO_BIBLIOCASITA'],
+    images: ['https://res.cloudinary.com/dqidjyjrm/image/upload/f_auto,q_auto/v1770879048/lOGO_BIBLIOCASITA_eosgpj.png'],
   },
 };
 

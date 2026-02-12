@@ -1,53 +1,27 @@
 /**
- * Cloudinary image URL helper.
- * All images are stored in the `bibliocasita` folder on Cloudinary.
- *
- * When you upload an image to Cloudinary (to the bibliocasita folder),
- * you can reference it here using its filename.
- *
- * The `f_auto,q_auto` transformations automatically optimize
- * format (WebP/AVIF) and quality for each visitor's browser.
+ * Cloudinary image URLs for the site.
+ * These are the actual URLs from the Cloudinary Media Library.
  */
-
-const CLOUD_NAME = 'dqidjyjrm';
-const BASE_URL = `https://res.cloudinary.com/${CLOUD_NAME}/image/upload`;
-
-/**
- * Build an optimized Cloudinary image URL.
- * @param publicId - The image public ID (e.g., "bibliocasita/my-image")
- * @param options - Optional width for responsive sizing
- */
-export function cloudinaryUrl(publicId: string, options?: { width?: number }): string {
-    const transforms = ['f_auto', 'q_auto'];
-    if (options?.width) {
-        transforms.push(`w_${options.width}`);
-    }
-    return `${BASE_URL}/${transforms.join(',')}/${publicId}`;
-}
-
-// ============================================================
-// Home page images — update these after uploading to Cloudinary
-// ============================================================
 
 // Hero background
-export const HERO_BG = cloudinaryUrl('bibliocasita/Descripcion_2');
+export const HERO_BG = 'https://res.cloudinary.com/dqidjyjrm/image/upload/f_auto,q_auto/v1770879021/Descripcion_2_f06vup.jpg';
 
 // History / About section image
-export const HISTORY_IMG = cloudinaryUrl('bibliocasita/foto_1ra');
+export const HISTORY_IMG = 'https://res.cloudinary.com/dqidjyjrm/image/upload/f_auto,q_auto/v1770879001/foto_1ra_jawqrp.jpg';
 
 // Founder photo
-export const FOUNDER_IMG = cloudinaryUrl('bibliocasita/IMG-20241224-WA0008');
+export const FOUNDER_IMG = 'https://res.cloudinary.com/dqidjyjrm/image/upload/f_auto,q_auto/v1770879045/IMG-20241224-WA0008_xa1nur.jpg';
 
 // Logo
-export const LOGO_IMG = cloudinaryUrl('bibliocasita/lOGO_BIBLIOCASITA');
+export const LOGO_IMG = 'https://res.cloudinary.com/dqidjyjrm/image/upload/f_auto,q_auto/v1770879048/lOGO_BIBLIOCASITA_eosgpj.png';
 
 // Carousel images
 export const CAROUSEL_IMAGES = [
-    cloudinaryUrl('bibliocasita/Descripcion_2'),
-    cloudinaryUrl('bibliocasita/Descripcion_1'),
-    cloudinaryUrl('bibliocasita/Foto_1a'),
-    cloudinaryUrl('bibliocasita/Foto_2da'),
-    cloudinaryUrl('bibliocasita/Foto_3ra'),
-    cloudinaryUrl('bibliocasita/IMG-20240914-WA0003'),
-    cloudinaryUrl('bibliocasita/IMG-20241124-WA0012'),
+    'https://res.cloudinary.com/dqidjyjrm/image/upload/f_auto,q_auto/v1770879021/Descripcion_2_f06vup.jpg',
+    'https://res.cloudinary.com/dqidjyjrm/image/upload/f_auto,q_auto/v1770879008/Descripci%C3%B3n_1_abiczg.jpg',
+    'https://res.cloudinary.com/dqidjyjrm/image/upload/f_auto,q_auto/v1770879025/Foto_1a_oamhnr.jpg',
+    'https://res.cloudinary.com/dqidjyjrm/image/upload/f_auto,q_auto/v1770879014/Foto_2da_nr8jbi.jpg',
+    'https://res.cloudinary.com/dqidjyjrm/image/upload/f_auto,q_auto/v1770879053/Foto_3ra_xx7hqk.jpg',
+    'https://res.cloudinary.com/dqidjyjrm/image/upload/f_auto,q_auto/v1770879021/IMG-20240914-WA0003_mmwdl3.jpg',
+    'https://res.cloudinary.com/dqidjyjrm/image/upload/f_auto,q_auto/v1770879026/IMG-20241124-WA0012_um5olp.jpg',
 ];
