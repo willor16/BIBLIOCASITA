@@ -52,6 +52,14 @@ export default function HomeClient({ news }: HomeClientProps) {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.3 }}
+                        className="font-serif text-lg md:text-2xl italic text-primary/90 mb-4 tracking-wide"
+                    >
+                        Un proyecto nacido del corazón para nutrir una mente olvidada
+                    </motion.p>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, delay: 0.5 }}
                         className="text-xl md:text-3xl font-light tracking-wide mb-10 text-cream/90 font-display"
                     >
                         Un santuario para el pensamiento y la lectura en comunidad.

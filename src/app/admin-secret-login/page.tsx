@@ -8,7 +8,7 @@ export default function AdminLogin() {
 
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
-        if (password === 'admin123') { // Simple hardcoded check for MVP as requested
+        if (password === 'bibliocasita23toto') {
             // Set cookie client-side for simplicity in this demo context
             document.cookie = "admin_session=true; path=/; max-age=3600";
             router.push('/admin-secret-login/dashboard');
