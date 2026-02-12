@@ -48,14 +48,26 @@ export default function HomeClient({ news }: HomeClientProps) {
                         <div className="h-1 w-24 bg-primary mx-auto mb-8"></div>
                     </motion.div>
 
-                    <motion.p
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.3 }}
-                        className="font-serif text-lg md:text-2xl italic text-primary/90 mb-4 tracking-wide"
+                        className="mb-6 flex flex-col items-center"
                     >
-                        Un proyecto nacido del corazón para nutrir una mente olvidada
-                    </motion.p>
+                        <div className="flex items-center gap-4 mb-3">
+                            <div className="h-px w-10 md:w-16 bg-gradient-to-r from-transparent to-white/50"></div>
+                            <span className="text-white/70 text-lg">❝</span>
+                            <div className="h-px w-10 md:w-16 bg-gradient-to-l from-transparent to-white/50"></div>
+                        </div>
+                        <p className="font-serif text-lg md:text-2xl text-white italic tracking-wide leading-relaxed">
+                            Un proyecto nacido del corazón para nutrir una mente olvidada
+                        </p>
+                        <div className="flex items-center gap-3 mt-3">
+                            <div className="h-px w-8 bg-white/30"></div>
+                            <span className="text-primary text-sm">♥</span>
+                            <div className="h-px w-8 bg-white/30"></div>
+                        </div>
+                    </motion.div>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
