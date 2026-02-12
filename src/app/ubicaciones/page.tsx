@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: 'Encuentra las ubicaciones de nuestras Bibliocasitas.',
 };
 
-export const revalidate = 60;
+export const dynamic = 'force-dynamic';
 
 export default async function LocationsPage() {
     const locations = await prisma.location.findMany({

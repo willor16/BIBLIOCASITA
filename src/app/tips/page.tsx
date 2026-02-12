@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: 'Descubre consejos y técnicas para mejorar tu experiencia de lectura.',
 };
 
-export const revalidate = 60;
+export const dynamic = 'force-dynamic';
 
 export default async function TipsPage() {
     const tips = await prisma.tip.findMany({

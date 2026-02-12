@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: 'Descubre nuevas aventuras literarias con nuestras rutas guiadas.',
 };
 
-export const revalidate = 60;
+export const dynamic = 'force-dynamic';
 
 export default async function RoutesPage() {
     const routes = await prisma.readingRoute.findMany({
