@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Target, Eye, Compass, X, Instagram, Linkedin, Mail, Youtube, Facebook } from 'lucide-react';
+import { ArrowRight, Target, Eye, Compass, X, Instagram, Linkedin, Mail, Youtube, Facebook, BookOpen, ClipboardList, Home, Bell, RefreshCw, MapPin } from 'lucide-react';
 import Carousel from '@/components/Carousel';
 import { HERO_BG, HISTORY_IMG, FOUNDER_IMG } from '@/lib/cloudinary';
 
@@ -67,6 +67,144 @@ export default function HomeClient({ news }: HomeClientProps) {
                         >
                             Descubrir más
                         </a>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* Reglas de Uso */}
+            <section className="py-24 px-6 md:px-20 bg-white relative overflow-hidden">
+                {/* Decorative background elements */}
+                <div className="absolute top-0 left-0 w-72 h-72 bg-primary/5 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+                <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/5 rounded-full translate-x-1/3 translate-y-1/3"></div>
+
+                <div className="max-w-6xl mx-auto relative z-10">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="text-center mb-16"
+                    >
+                        <span className="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-4 block">Cómo Funciona</span>
+                        <h2 className="font-serif text-4xl md:text-5xl font-bold text-charcoal mb-4">Reglas de Uso</h2>
+                        <p className="text-charcoal/60 text-lg font-display max-w-2xl mx-auto">
+                            Sigue estos sencillos pasos para disfrutar de nuestros libros
+                        </p>
+                    </motion.div>
+
+                    <div className="relative">
+                        {/* Vertical timeline line - desktop */}
+                        <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/30 via-primary/60 to-primary/30 -translate-x-1/2"></div>
+
+                        <div className="space-y-8 md:space-y-0">
+                            {[
+                                {
+                                    icon: BookOpen,
+                                    title: 'Disfrutar de la lectura',
+                                    description: 'Explora nuestra colección y sumérgete en el mundo de los libros. Encuentra historias que despierten tu imaginación.',
+                                    color: 'from-amber-400 to-orange-500',
+                                    bgColor: 'bg-amber-50',
+                                },
+                                {
+                                    icon: ClipboardList,
+                                    title: 'Registra tus datos',
+                                    description: 'Al encontrar el libro que sea de tu interés, deberás dejar tus datos para llevar un control adecuado.',
+                                    color: 'from-emerald-400 to-teal-500',
+                                    bgColor: 'bg-emerald-50',
+                                },
+                                {
+                                    icon: Home,
+                                    title: 'Lectura en casa',
+                                    description: 'Disfruta de la lectura desde la comodidad de tu casa cuidando los libros con responsabilidad y cariño.',
+                                    color: 'from-blue-400 to-indigo-500',
+                                    bgColor: 'bg-blue-50',
+                                },
+                                {
+                                    icon: Bell,
+                                    title: 'Toca la campana',
+                                    description: 'Al finalizar, debes tocar la campana como señal de haber terminado, trayendo de vuelta el libro a la Bibliocasita.',
+                                    color: 'from-purple-400 to-violet-500',
+                                    bgColor: 'bg-purple-50',
+                                },
+                                {
+                                    icon: RefreshCw,
+                                    title: '¡Repite la aventura!',
+                                    description: 'Si deseas seguir leyendo otro libro, simplemente repite los pasos anteriores. ¡La lectura no tiene límites!',
+                                    color: 'from-rose-400 to-pink-500',
+                                    bgColor: 'bg-rose-50',
+                                },
+                            ].map((rule, index) => {
+                                const Icon = rule.icon;
+                                const isEven = index % 2 === 0;
+                                return (
+                                    <motion.div
+                                        key={index}
+                                        initial={{ opacity: 0, x: isEven ? -40 : 40 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true, margin: '-50px' }}
+                                        transition={{ duration: 0.6, delay: index * 0.1 }}
+                                        className={`relative md:flex items-center ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} md:mb-16`}
+                                    >
+                                        {/* Timeline node */}
+                                        <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 z-10">
+                                            <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${rule.color} flex items-center justify-center text-white font-bold text-lg shadow-lg ring-4 ring-white`}>
+                                                {index + 1}
+                                            </div>
+                                        </div>
+
+                                        {/* Spacer */}
+                                        <div className="hidden md:block w-1/2"></div>
+
+                                        {/* Card */}
+                                        <div className={`w-full md:w-1/2 ${isEven ? 'md:pl-12' : 'md:pr-12'}`}>
+                                            <div className={`${rule.bgColor} rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 group relative overflow-hidden`}>
+                                                {/* Decorative gradient */}
+                                                <div className={`absolute top-0 right-0 w-40 h-40 bg-gradient-to-br ${rule.color} opacity-10 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700`}></div>
+
+                                                <div className="relative z-10 flex items-start gap-5">
+                                                    {/* Mobile number + Icon */}
+                                                    <div className="flex-shrink-0">
+                                                        <div className={`md:hidden w-10 h-10 rounded-full bg-gradient-to-br ${rule.color} flex items-center justify-center text-white font-bold text-sm shadow-md mb-3`}>
+                                                            {index + 1}
+                                                        </div>
+                                                        <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${rule.color} flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
+                                                            <Icon className="w-7 h-7 text-white" />
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex-grow">
+                                                        <h3 className="font-serif text-xl md:text-2xl font-bold text-charcoal mb-2 group-hover:text-primary transition-colors">
+                                                            {rule.title}
+                                                        </h3>
+                                                        <p className="text-charcoal/60 leading-relaxed font-display">
+                                                            {rule.description}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                );
+                            })}
+                        </div>
+                    </div>
+
+                    {/* CTA Button */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                        className="text-center mt-16"
+                    >
+                        <Link
+                            href="/ubicaciones"
+                            className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-primary to-primary/90 text-white font-bold uppercase tracking-widest rounded-xl hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 transition-all duration-300 group"
+                        >
+                            <MapPin className="w-5 h-5" />
+                            Visítanos
+                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                        <p className="text-charcoal/40 text-sm mt-4 font-display">Encuentra tu Bibliocasita más cercana</p>
                     </motion.div>
                 </div>
             </section>
